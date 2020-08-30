@@ -60,8 +60,9 @@ CACHE_LIFETIME with the number of days that your cache will last. Default is 3
 	export CACHE_LIFETIME=10
 	```
 
-#### Makemigrations if needed, then
+#### Make and apply migrations
 ```sh
+python manage.py makemigrations
 python manage.py migrate
 ```
 
