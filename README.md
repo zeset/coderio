@@ -65,6 +65,10 @@ python service/manage.py migrate
 ### Run on 8010 port
 ```sh
 python service/manage.py runserver 8000
+```
+
+### Try running endpoints unit tests with
+```sh
 pytest -vs /star_wars/tests.py
 ```
 
