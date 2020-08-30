@@ -62,12 +62,12 @@ CACHE_LIFETIME with the number of days that your cache will last. Default is 3
 python service/manage.py migrate
 ```
 
-### Run on 8010 port
+### Run on 8000 port
 ```sh
 python service/manage.py runserver 8000
 ```
 
-### Try running endpoints unit tests with
+### Run endpoints unit tests
 ```sh
 pytest -vs /star_wars/tests.py
 ```
