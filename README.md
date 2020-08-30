@@ -15,7 +15,7 @@ The easiest way to install it is by using pip
 	sudo pip install virtualenvwrapper
 	```
 
-2. Open .bashrc or .zshrc file and add:
+2. Open .bashrc file (it may depend on your distribution) and add:
 	```sh
 	# Virtualenvwrapper
 	export VIRTUALENVWRAPPER_PYTHON=/usr/bin/python3
