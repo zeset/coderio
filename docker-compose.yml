@@ -1,0 +1,20 @@
+version: '3'
+  
+services:
+  tests:
+    build: .
+    environment:
+    - DJANGO_SETTINGS_MODULE=coderio.settings
+    command: pytest /code/star_wars/tests.py
+    volumes:
+      - .:/code
+  
+  web:
+    build: .
+    command: python manage.py runserver 0.0.0.0:8000
+    volumes:
+      - .:/code
+    ports:
+      - "8000:8000"
+    depends_on:
+      - tests
