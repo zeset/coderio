@@ -80,7 +80,7 @@ sudo systemctl start docker
 sudo systemctl enable docker
 ```
 
-#### Install Docker and Docker compose
+#### Compose Up at root of cloned repo
 
 ```sh
 docker-compose -f docker-compose.yml up
