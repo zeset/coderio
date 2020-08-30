@@ -4,11 +4,11 @@ coderio / Ubuntu Setup
 1. [Run using virtualenv](#virtualenvs)
 2. [Run using docker](#docker) 
 ---
-Run using virtualenv
+# Run using virtualenv
 
 <div id="docker"></div>
 
-#### Install virtualenvwrapper
+### Install virtualenvwrapper
 The easiest way to install it is by using pip
 
 1. Install virtualenvwrapper using pip
@@ -71,7 +71,7 @@ pytest -vs /star_wars/tests.py
 <div id="docker"></div>
 
 ---
-Run using docker
+# Run using docker
 
 ### Install Docker and Docker compose
 ```sh
