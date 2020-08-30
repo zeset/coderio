@@ -1,7 +1,7 @@
 coderio / Ubuntu setup
 ==============
 
-This is a Django Backend build on top of Django Rest Framework that provides an API interface to interact with [Star Wars API](https://swapi.dev/) Characters data, while using a sqlite database for cache purposes. Next, you'll find enough instructions to run the project.
+This is a Django backend project build on top of Django Rest Framework that provides an API interface to interact with [Star Wars API](https://swapi.dev/) Characters data, while using a sqlite database for cache purposes. Next, you'll find enough instructions to run the project.
 
 
 1. [Run using virtualenv](#virtualenvs)
