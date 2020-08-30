@@ -76,8 +76,10 @@ sudo systemctl start docker
 sudo systemctl enable docker
 ```
 
-```
-docker-compose -f containers/compose/docker-compose.yml up
+#### at the root of [/path/to/repo/], run 
+
+```sh
+docker-compose -f docker-compose.yml up
 ```
 
 If this fails, make sure your user is in the [docker user group](https://docs.docker.com/engine/install/linux-postinstall/) OR run with sudo.
