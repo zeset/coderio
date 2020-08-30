@@ -1,14 +1,14 @@
-coderio / Ubuntu Setup
+coderio / Ubuntu setup
 ==============
 
 1. [Run using virtualenv](#virtualenvs)
 2. [Run using docker](#docker) 
 ---
-# Run using virtualenv
+## Run using virtualenv
 
 <div id="docker"></div>
 
-### Install virtualenvwrapper
+#### Install virtualenvwrapper
 The easiest way to install it is by using pip
 
 1. Install virtualenvwrapper using pip
@@ -31,7 +31,7 @@ The easiest way to install it is by using pip
 	```
 
 ## Configuration
-### Create an enviroment
+#### Create an enviroment
 1. Create the environment
 	```sh
 	cd /path/to/repo/
@@ -40,7 +40,7 @@ The easiest way to install it is by using pip
 	deactivate
 	```
 
-### Install the requirements
+#### Install the requirements
 1. Activate the enviroment
 	```sh
 	workon coderio
@@ -57,17 +57,17 @@ CACHE_LIFETIME with the number of days that your cache will last. Default is 3
 	export CACHE_LIFETIME=10
 	```
 
-### Makemigrations if needed, then
+#### Makemigrations if needed, then
 ```sh
-python service/manage.py migrate
+python manage.py migrate
 ```
 
-### Run on 8000 port
+#### Run on 8000 port
 ```sh
 python service/manage.py runserver 8000
 ```
 
-### Run endpoints unit tests
+#### Run endpoints unit tests
 ```sh
 pytest -vs /star_wars/tests.py
 ```
@@ -75,9 +75,9 @@ pytest -vs /star_wars/tests.py
 <div id="docker"></div>
 
 ---
-# Run using docker
+## Run using docker
 
-### Install Docker and Docker compose
+#### Install Docker and Docker compose
 ```sh
 sudo apt install docker.io
 ```
@@ -93,7 +93,7 @@ sudo systemctl start docker
 sudo systemctl enable docker
 ```
 
-#### Compose Up at root of cloned repo
+#### Compose up at root of cloned repo
 
 ```sh
 docker-compose -f docker-compose.yml up
