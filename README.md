@@ -1,4 +1,4 @@
-coderio
+coderio / Ubuntu Setup
 ==============
 
 1. [Run using virtualenv](#virtualenvs)
