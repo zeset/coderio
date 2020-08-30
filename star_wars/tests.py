@@ -15,7 +15,7 @@ class TestCharacterAPI(APITestCase):
     def test_post_character_rating(self):
         client = APIClient()
 
-        request = client.post(
+        client.post(
             reverse('character-rating', args={1}),
             {'rating': 3},
         )
@@ -23,6 +23,19 @@ class TestCharacterAPI(APITestCase):
         self.assertEqual(
             Character.objects.get(api_id=1).max_rating(),
             3
+        )
+
+    def test_post_character_rating_wrong_value(self):
+        client = APIClient()
+
+        response = client.post(
+            reverse('character-rating', args={1}),
+            {'rating': 6},
+        )
+
+        self.assertEqual(
+            response.status_code,
+            400
         )
 
     def test_get_uncached_character(self):

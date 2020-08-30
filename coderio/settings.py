@@ -122,6 +122,6 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 
-CACHE_LIFETIME = os.getenv('CACHE_LIFETIME', 3)
+CACHE_LIFETIME = int(os.getenv('CACHE_LIFETIME', 3))
 
 django.setup()

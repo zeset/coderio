@@ -41,9 +41,9 @@ class Homeworld(models.Model):
         self.save()
 
     def cached_recently(self):
-        has_cache = self.last_update is None
+        has_cache = self.last_update is not None
 
-        return has_cache or (datetime.utcnow().replace(
+        return has_cache and (datetime.utcnow().replace(
             tzinfo=pytz.utc
         ) - self.last_update.replace(
             tzinfo=pytz.utc
@@ -59,23 +59,18 @@ class Homeworld(models.Model):
             **parse_homeworld_data(homeworld_response.json()),
         )
 
-        self.mark_as_cached()
+        homeworld_data = parse_homeworld_data(homeworld_response.json())
 
-        self.refresh_from_db()
+        self.name = homeworld_data['name']
+        self.population = homeworld_data['population']
+        self.known_residents_count = homeworld_data['known_residents_count']
+        self.save()
+
+        self.mark_as_cached()
 
 
 class Character(models.Model):
     ENDPOINT = "https://swapi.dev/api/people/"
-    API_DESIRED_ATTRIBUTES = [
-        'name',
-        'height',
-        'mass',
-        'hair_color',
-        'skin_color',
-        'eye_color',
-        'birth_year',
-        'gender'
-    ]
 
     api_id = models.IntegerField(unique=True)
     name = models.CharField(max_length=100, null=True, blank=True)
@@ -123,13 +118,9 @@ class Character(models.Model):
         )['average_rating'] or 0
 
     def cached_recently(self):
-        has_cache = self.last_update is None
+        has_cache = self.last_update is not None
 
-        return has_cache or (datetime.utcnow().replace(
-            tzinfo=pytz.utc
-        ) - self.last_update.replace(
-            tzinfo=pytz.utc
-        )).days <= CACHE_LIFETIME
+        return has_cache and (datetime.utcnow().replace(tzinfo=pytz.utc) - self.last_update.replace(tzinfo=pytz.utc)).days <= CACHE_LIFETIME
 
     def update_from_api(self):
         character_response = requests.get(f"{self.ENDPOINT}{self.api_id}/")
@@ -139,19 +130,19 @@ class Character(models.Model):
 
         response_data = character_response.json()
 
-        Character.objects.filter(pk=self.id).update(
-            **{key: response_data[key] for key in self.API_DESIRED_ATTRIBUTES},
-            species_name=parse_species_name(response_data),
-            homeworld=Homeworld.get_by_api_id(
-                api_id=parse_homeworld_id(
-                    response_data
-                )
-            ),
-        )
+        self.name = response_data['name']
+        self.height = response_data['height']
+        self.mass = response_data['mass']
+        self.hair_color = response_data['hair_color']
+        self.skin_color = response_data['skin_color']
+        self.eye_color = response_data['eye_color']
+        self.birth_year = response_data['birth_year']
+        self.gender = response_data['gender']
+        self.species_name = parse_species_name(response_data)
+        self.homeworld = Homeworld.get_by_api_id(api_id=parse_homeworld_id(response_data))
+        self.save()
 
         self.mark_as_cached()
-
-        self.refresh_from_db()
 
 
 class CharacterRate(models.Model):
