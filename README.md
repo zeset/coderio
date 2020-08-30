@@ -5,8 +5,8 @@ This is a Django backend project build on top of Django Rest Framework that prov
 
 ## Available endpoints are 
 
-* GET star-wars/character/<swapi_id>/ to get character data, along with its top and average rating
-* POST star-wars/character/<swapi_id>/rating/ {'rating': < 1<= value <= 5 >} to rate a character
+* GET <b>star-wars/character/<swapi_id>/</b> to get character data, along with its top and average rating
+* POST <b>star-wars/character/<swapi_id>/rating/</b> <i>{'rating': < 1<= value <= 5 >}</i> to rate a character
 
 As this is a toy project, no authentication is required.
 
