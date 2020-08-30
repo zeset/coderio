@@ -3,7 +3,8 @@ coderio / Ubuntu Setup
 
 1. [Run using virtualenv](#virtualenvs)
 2. [Run using docker](#docker) 
-
+---
+Run using virtualenv
 
 <div id="docker"></div>
 
@@ -70,7 +71,7 @@ pytest -vs /star_wars/tests.py
 <div id="docker"></div>
 
 ---
-# Run locally with docker
+Run using docker
 
 ### Install Docker and Docker compose
 ```sh
