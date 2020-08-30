@@ -3,7 +3,7 @@ coderio / Ubuntu setup
 
 This is a Django backend project build on top of Django Rest Framework that provides an API interface to interact with [Star Wars API](https://swapi.dev/) Characters data, while using a sqlite database for cache purposes. Some rating functionality is provided too. 
 
-# Available endpoints are 
+## Available endpoints are 
 
 * GET star-wars/character/<swapi_id>/ to get character data, along with its top and average rating
 * POST star-wars/character/<swapi_id>/rating/ {'rating': < 1<= value <= 5 >} to rate a character
