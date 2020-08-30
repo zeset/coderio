@@ -44,9 +44,16 @@ The easiest way to install it is by using pip
 	```sh
 	workon coderio
 	```
-2. When accesing the environment, export the PYTHONPATH env variable
+2. When activating the environment, export the following environmental variables
 	```sh
 	export PYTHONPATH=[/path/to/repo/]coderio
+	export DJANGO_SETTINGS_MODULE=coderio.settings
+	```
+3. (OPTIONAL) If you want to set a specific cache lifetime, export the variable 
+CACHE_LIFETIME with the number of days that your cache will last. Default is 3
+
+	```sh
+	export CACHE_LIFETIME=10
 	```
 
 ### Makemigrations if needed, then
@@ -57,6 +64,7 @@ python service/manage.py migrate
 ### Run on 8010 port
 ```sh
 python service/manage.py runserver 8000
+pytest -vs /star_wars/tests.py
 ```
 
 <div id="docker"></div>
