@@ -2,7 +2,10 @@ coderio / Ubuntu Setup
 ==============
 
 1. [Run using virtualenv](#virtualenvs)
-2. [Run using docker](#docker)
+2. [Run using docker](#docker) 
+
+
+<div id="docker"></div>
 
 #### Install virtualenvwrapper
 The easiest way to install it is by using pip
@@ -62,22 +65,22 @@ python service/manage.py runserver 8000
 # Run locally with docker
 
 ### Install Docker and Docker compose
-On **Ubuntu 18.x/Debian**
 ```sh
 sudo apt install docker.io
 ```
-Docker Compose:
 
 ```sh
 sudo apt install docker-compose
+
 ```
+#### Run docker service
 
 ```sh
 sudo systemctl start docker
 sudo systemctl enable docker
 ```
 
-#### at the root of [/path/to/repo/], run 
+#### Install Docker and Docker compose
 
 ```sh
 docker-compose -f docker-compose.yml up
