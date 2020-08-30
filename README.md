@@ -51,12 +51,13 @@ The easiest way to install it is by using pip
 python service/manage.py migrate
 ```
 
-## Run on 8010 port
+### Run on 8010 port
 ```sh
 python service/manage.py runserver 8000
 ```
 
 <div id="docker"></div>
+
 ---
 # Run locally with docker
 
