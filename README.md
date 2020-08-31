@@ -5,8 +5,8 @@ This is a Django backend project build on top of Django Rest Framework that prov
 
 ## Available endpoints are 
 
-* GET <b>star-wars/character/<swapi_id>/</b> to get character data, along with its top and average rating
-* POST <b>star-wars/character/<swapi_id>/rating/</b> <i>{'rating': < 1<= value <= 5 >}</i> to rate a character
+* GET <b>star-wars/character/\<swapi_id\>/</b> to get character data, along with its top and average rating
+* POST <b>star-wars/character/\<swapi_id\>/rating/</b> <i>{'rating': < 1<= value <= 5 >}</i> to rate a character
 
 As this is a toy project, no authentication is required.
 
@@ -19,7 +19,7 @@ Next, you'll find enough instructions to run it.
 ---
 ## Run using virtualenv
 
-<div id="docker"></div>
+<div id="virtualenvs"></div>
 
 #### Install virtualenvwrapper
 The easiest way to install it is by using pip
