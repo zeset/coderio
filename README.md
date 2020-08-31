@@ -10,7 +10,7 @@ This is a Django backend project build on top of Django Rest Framework that prov
 
 As this is a toy project, no authentication is required.
 
-Next, you'll find enough instructions to run the project.
+Next, you'll find enough instructions to run it.
 
 ---
 
